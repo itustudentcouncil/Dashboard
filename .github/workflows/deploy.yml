@@ -1,0 +1,22 @@
+# This action updates the student-council-dashboard-image to be used seperately in Docker Compose
+# The updated image is later deployed with Docker Compose in the itustudentcouncil/Infrastructure-Compose repository
+# To update the website first run this action then the deploy.yml action in itustudentcouncil/Infrastructure-Compose
+name: Deploy updated website Docker Image to Hostinger
+
+on:
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: student-council-dashboard-image:latest
+  CONTAINER_NAME: student-council-dashboard-container
+
+jobs:
+  deploy:
+    runs-on: Hostinger
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build -t $IMAGE_NAME .
