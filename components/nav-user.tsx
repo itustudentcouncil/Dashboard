@@ -4,6 +4,7 @@ import {
     EllipsisVertical,
   LogOut,
   UserCircle,
+  Globe,
 } from "lucide-react"
 
 import {
@@ -84,6 +85,15 @@ export function NavUser({ account }: NavUserProps) {
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
+              <DropdownMenuItem asChild>
+                <Link
+                  href="https://studentcouncil.dk"
+                  className="cursor-pointer"
+                >
+                  <Globe />
+                  Back to Website
+                </Link>
+              </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link
                   href="https://login.studentcouncil.dk/account"
