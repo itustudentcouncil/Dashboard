@@ -222,7 +222,7 @@ export function OrganisationEditForm({ organisation, categories, quickLinks, lin
         : await (async () => {
             const formData = new FormData();
             formData.append("Name", link.name.trim());
-            formData.append("Url", link.url.trim());
+            formData.append("Link", link.url.trim());
             formData.append("TypeId", String(link.type?.id ?? defaultLinkType.id));
 
             const iconFile = quickLinkIconFiles[link.localId];
