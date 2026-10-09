@@ -18,12 +18,12 @@ export async function PATCH(request: Request, context: RouteContext) {
   const forwardFormData = new FormData();
 
   const name = incomingFormData.get("Name");
-  const url = incomingFormData.get("Url");
+  const link = incomingFormData.get("Link");
   const typeId = incomingFormData.get("TypeId");
   const icon = incomingFormData.get("Icon");
 
   if (typeof name === "string") forwardFormData.set("Name", name);
-  if (typeof url === "string") forwardFormData.set("Url", url);
+  if (typeof link === "string") forwardFormData.set("Link", link);
   if (typeof typeId === "string") forwardFormData.set("TypeId", typeId);
   if (icon instanceof File && icon.size > 0) forwardFormData.set("Icon", icon);
 
