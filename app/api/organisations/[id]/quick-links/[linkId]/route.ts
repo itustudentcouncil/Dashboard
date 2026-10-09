@@ -17,15 +17,15 @@ export async function PATCH(request: Request, context: RouteContext) {
   const incomingFormData = await request.formData();
   const forwardFormData = new FormData();
 
-  const name = incomingFormData.get("Name");
-  const link = incomingFormData.get("Link");
-  const typeId = incomingFormData.get("TypeId");
-  const icon = incomingFormData.get("Icon");
+  const name = incomingFormData.get("name");
+  const link = incomingFormData.get("link");
+  const typeId = incomingFormData.get("typeId");
+  const icon = incomingFormData.get("icon");
 
-  if (typeof name === "string") forwardFormData.set("Name", name);
-  if (typeof link === "string") forwardFormData.set("Link", link);
-  if (typeof typeId === "string") forwardFormData.set("TypeId", typeId);
-  if (icon instanceof File && icon.size > 0) forwardFormData.set("Icon", icon);
+  if (typeof name === "string") forwardFormData.set("name", name);
+  if (typeof link === "string") forwardFormData.set("link", link);
+  if (typeof typeId === "string") forwardFormData.set("typeId", typeId);
+  if (icon instanceof File && icon.size > 0) forwardFormData.set("icon", icon);
 
   const targetUrl = `${commandApiUrl}/command/v1/organisation/${id}/quick-links/${linkId}`;
 
